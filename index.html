@@ -3,16 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dijkstra’s Pathfinding Visualization</title>
+    <title>Dijkstra's Pathfinding Visualizer</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Dijkstra’s Pathfinding Visualization</h1>
-    <div id="grid"></div>
-    <div id="controls">
-        <button id="reset">Reset</button>
-        <button id="solve">Solve</button>
-        <p id="timer">Time taken: <span id="time">0</span> ms</p>
+    <h1>Dijkstra's Pathfinding Visualizer</h1>
+    <div class="container">
+        <div id="instructions">
+            <h2>Instructions</h2>
+            <ol>
+                <li>Click on the grid to set the start point (cyan)</li>
+                <li>Click again to set the end point (blue)</li>
+                <li>Adjust speed and click 'Solve' to visualize the algorithm</li>
+            </ol>
+        </div>
+        <div id="main-content">
+            <div id="grid"></div>
+            <div id="controls">
+                <div class="control-group">
+                    <label for="speed">Speed:</label>
+                    <input type="range" id="speed" min="1" max="100" value="50">
+                </div>
+                <button id="reset">Reset</button>
+                <button id="solve">Solve</button>
+                <div id="timer">Time: <span id="time">0</span> ms</div>
+            </div>
+        </div>
+        <div id="info">
+            <h2>About Dijkstra's Algorithm</h2>
+            <p>Dijkstra's algorithm is a graph search algorithm that solves the single-source shortest path problem for a graph with non-negative edge weights, producing a shortest path tree. This visualizer demonstrates how the algorithm explores the grid to find the shortest path between the start and end points.</p>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>

@@ -1,17 +1,52 @@
 body {
     font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     background-color: #0a3d62;
     color: #fff;
     margin: 0;
-    height: 100vh;
+    padding: 20px;
+    min-height: 100vh;
 }
 
 h1 {
+    text-align: center;
     margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#instructions, #info {
+    background-color: #133352;
+    padding: 15px;
+    border-radius: 5px;
+    width: 400px; height: 500px;
+    align-self: flex-start;
+    color: #8c9fb3;
+}
+
+#instructions h2, #info h2 {
+    margin-top: 0;
+    color: #c3dbf3;
+}
+
+#instructions ol {
+    padding-left: 20px;
+    color: #8c9fb3;
+}
+
+#instructions li {
+    margin-bottom: 10px;
+}
+
+#main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #grid {
@@ -25,7 +60,7 @@ h1 {
 .cell {
     width: 10px;
     height: 10px;
-    background-color: #ecf0f1;
+    background-color: #c3dbf3;
     cursor: pointer;
 }
 
@@ -34,15 +69,15 @@ h1 {
 }
 
 .cell.start {
-    background-color: #00ffd2;
+    background-color: #10c656;
 }
 
 .cell.end {
-    background-color: #0078ff;
+    background-color: #ff0000;
 }
 
 .cell.visited {
-    background-color: #27ae60;
+    background-color: #00a0b1;
 }
 
 .cell.path {
@@ -54,16 +89,59 @@ h1 {
     display: flex;
     gap: 20px;
     align-items: center;
+    background-color: #133352;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.control-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#speed {
+    width: 100px;
+    -webkit-appearance: none;
+    background: #0b2739;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    border-radius: 5px;
+}
+
+#speed:hover {
+    opacity: 1;
+    background-color: #3498db;
+}
+
+#speed::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #ecf0f1;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#speed::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #ecf0f1;
+    cursor: pointer;
+    border-radius: 50%;
 }
 
 #reset, #solve {
     padding: 10px 20px;
-    background-color: #2980b9;
+    background-color: #0b2739;
     border: none;
     color: #fff;
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
 #reset:hover, #solve:hover {
@@ -72,4 +150,7 @@ h1 {
 
 #timer {
     font-size: 16px;
+    background-color: #0b2739;
+    padding: 10px;
+    border-radius: 5px;
 }
