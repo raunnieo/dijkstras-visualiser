@@ -121,7 +121,7 @@ function showTime() {
 
 // Calculate delay based on speed slider
 function calculateDelay() {
-    return 101 - animationSpeed; // Invert the scale so higher value means faster
+    return 30 - animationSpeed; // Invert the scale so higher value means faster
 }
 
 // Delay function for animation
