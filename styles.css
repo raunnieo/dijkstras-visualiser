@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #0a3d62;
+    background-color: #1D2125;
     color: #fff;
     margin: 0;
     padding: 20px;
@@ -16,27 +16,27 @@ h1 {
     display: flex;
     justify-content: center;
     gap: 20px;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
 #instructions, #info {
-    background-color: #133352;
+    background-color: #161A1D;
     padding: 15px;
     border-radius: 5px;
     width: 400px; height: 500px;
     align-self: flex-start;
-    color: #8c9fb3;
+    color: #B6C2CF;
 }
 
 #instructions h2, #info h2 {
     margin-top: 0;
-    color: #c3dbf3;
+    color: #DEE4EA;
 }
 
 #instructions ol {
     padding-left: 20px;
-    color: #8c9fb3;
+    color: #B6C2CF;
 }
 
 #instructions li {
@@ -60,7 +60,7 @@ h1 {
 .cell {
     width: 10px;
     height: 10px;
-    background-color: #c3dbf3;
+    background-color: #DEE4EA;
     cursor: pointer;
 }
 
@@ -69,7 +69,7 @@ h1 {
 }
 
 .cell.start {
-    background-color: #10c656;
+    background-color: #2dd573;
 }
 
 .cell.end {
@@ -77,7 +77,8 @@ h1 {
 }
 
 .cell.visited {
-    background-color: #008190;
+    background-color: #8fa5b8;
+    
 }
 
 .cell.path {
@@ -87,10 +88,11 @@ h1 {
 #controls {
     margin-top: 20px;
     display: flex;
+    width: 685px;
     gap: 20px;
     align-items: center;
-    background-color: #133352;
-    padding: 15px;
+    background-color: #161A1D;
+    padding: 20px;
     border-radius: 5px;
 }
 
@@ -98,12 +100,13 @@ h1 {
     display: flex;
     align-items: center;
     gap: 10px;
+    color: #B6C2CF;
 }
 
 #speed {
     width: 100px;
     -webkit-appearance: none;
-    background: #0b2739;
+    background: #596773;
     outline: none;
     opacity: 0.7;
     transition: opacity 0.2s;
@@ -112,7 +115,7 @@ h1 {
 
 #speed:hover {
     opacity: 1;
-    background-color: #3498db;
+    background-color: #1b6bda;
 }
 
 #speed::-webkit-slider-thumb {
@@ -135,22 +138,27 @@ h1 {
 
 #reset, #solve {
     padding: 10px 20px;
-    background-color: #0b2739;
+    background-color: #596773;
     border: none;
-    color: #fff;
+    width: 150px;
+    color: #B6C2CF;
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s;
 }
 
-#reset:hover, #solve:hover {
-    background-color: #3498db;
+#reset:hover, #solve:hover, #timer:hover {
+    background-color: #1b6bda;
 }
+
 
 #timer {
     font-size: 16px;
-    background-color: #0b2739;
+    background-color: #596773;
+    width: 150px;
+    text-align: center;
     padding: 10px;
+    color: #B6C2CF;
     border-radius: 5px;
 }
