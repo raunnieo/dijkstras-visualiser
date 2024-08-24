@@ -5,6 +5,7 @@ let startCell = null;
 let endCell = null;
 let isRunning = false;
 let startTime = 0;
+let animationSpeed = 100; // Default speed
 
 // Initialize grid
 function createGrid() {
@@ -63,7 +64,7 @@ async function dijkstra() {
             while (prev.has(temp)) {
                 temp.classList.add('path');
                 temp = prev.get(temp);
-                await delay(30); // Animation for path tracing
+                await delay(calculateDelay()); // Animation for path tracing
             }
             endCell.classList.add('end'); // Reapply end color
             showTime();
@@ -78,7 +79,7 @@ async function dijkstra() {
                 prev.set(neighbor, current);
                 queue.push(neighbor);
                 neighbor.classList.add('visited');
-                await delay(2); // Animation delay
+                await delay(calculateDelay()); // Animation delay
             }
         }
     }
@@ -117,14 +118,27 @@ function showTime() {
     document.getElementById('time').textContent = timeTaken;
 }
 
+
+// Calculate delay based on speed slider
+function calculateDelay() {
+    return 101 - animationSpeed; // Invert the scale so higher value means faster
+}
+
 // Delay function for animation
 function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+// Update animation speed
+function updateSpeed() {
+    animationSpeed = parseInt(document.getElementById('speed').value);
+}
+
 // Event listeners
 document.getElementById('reset').addEventListener('click', resetGrid);
 document.getElementById('solve').addEventListener('click', dijkstra);
+document.getElementById('speed').addEventListener('input', updateSpeed);
 
 // Initialize the grid when the page loads
 createGrid();
+updateSpeed();
